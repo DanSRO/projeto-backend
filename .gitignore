@@ -1,0 +1,14 @@
+#dependências
+node_modules/
+
+#variáveis sensíveis
+.env
+
+#logs e temps
+*.log
+*.tmp
+
+#arquivos de sistema ou IDE
+.DS_Store
+Thumbs.db
+.vscode
