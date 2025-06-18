@@ -1,10 +1,6 @@
 import { sequelize } from "../config/database.js";
 import { DataTypes } from "sequelize";
 import slugify from "slugify";
-import { ProductsImages } from "./Products-Images.js";
-import { ProductsOptions } from "./Products-Options.js";
-import { ProductsCategories } from "./Products-Categories.js";
-import { Categories } from "./Categories.js";
 
 export const Products = sequelize.define('Products',{
     id:{

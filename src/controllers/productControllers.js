@@ -86,18 +86,22 @@ export const getProductById = async(req, res) => {
 }
 
 export const createProduct = async (req, res) => {
-    const {enable, name, slug, stock, description, price, price_with_discount } = req.body;
-    if(enable || name || slug || stock || description || price || price_with_discount){
+    const {enable, name, slug, use_in_menu, stock, description, price, price_with_discount } = req.body;
+    if(!enable || !name || !slug || !use_in_menu || !stock || !description || !price || !price_with_discount){
         return res.status(400).json({erro:'Todos os campos são obrigatórios.'});
     }
     try{
-        const newProduct = await Products.create({enable, name, slug, stock, description, price, price_with_discount});
+        const newProduct = await Products.create({enable, name, slug, use_in_menu, stock, description, price, price_with_discount});
         res.status(201).json({
             id:newProduct.id,
             enable:newProduct.enable,
             name:newProduct.name,
-
-            use_in_menu:newProduct.use_in_menu
+            slug:newProduct.slug,
+            use_in_menu:newProduct.use_in_menu,
+            stock:newProduct.stock,
+            description:newProduct.description,
+            price:newProduct.price,
+            price_with_discount:newProduct.price_with_discount
         })
     }catch(error){
         console.log('');
