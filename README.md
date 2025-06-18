@@ -21,7 +21,7 @@ cp .env.example .env
 
 ```
 
-### Acesse seu gerenciado de banco de dados e crie um banco de dados ( usei o mysql )
+### Acesse seu gerenciador de banco de dados e crie um banco de dados ( usei o mysql )
 
 ### com as configurações concluídas instale as dependências com ###
 
