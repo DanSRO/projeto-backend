@@ -1,5 +1,5 @@
-import { createCategory, deleteCategory, getAllCategories, getCategoryById, updateCategory } from '../controllers/categoryControllers.js';
 import express from 'express';
+import { createCategory, deleteCategory, getAllCategories, getCategoryById, updateCategory } from '../controllers/categoryControllers.js';
 import { verifyToken } from '../middleware/authMiddleware.js';
 
 export const categoryRoutes = express.Router();
