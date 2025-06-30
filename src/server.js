@@ -18,10 +18,7 @@ const server = express();
 server.use(logger);
 server.use(cors());
 server.use(express.json());
-server.use('/v1/user', userRoutes);
-server.use('/v1/category', categoryRoutes);
-server.use('/v1/product', productRoutes);
-server.use('/v1/user', authRoutes);
+server.use('/v1', apiRoutes);
 
 Associations();
 sequelize.sync({force:false});
