@@ -1,4 +1,5 @@
 import { Users } from "../models/Users.js";
+import { emailServices } from "../services/emailServices.js";
 
 export const getAllUsers = async (req, res) => {
     try{        
@@ -33,6 +34,13 @@ export const createUser = async (req, res) => {
     }
     try{
         const newUser = await Users.create({firstname, surname, email, password});
+        
+        //Chamada ao serviço de "Envio de e-mail"
+        await emailServices.send(
+            email, 
+            "Bem vindo!",
+            `Olá ${firstname}, sua conta foi criada com sucesso!`
+        )
         res.status(201).json({
             id:newUser.id,
             firstname:newUser.firstname,
