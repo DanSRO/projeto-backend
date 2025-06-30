@@ -2,7 +2,8 @@ import { Products } from "../models/Products.js";
 
 export const getAllProducts = async (req, res) => {
     try{
-        let {limit = 30, page = 2, fields, match, category_ids, price_range, ... otherFilters } = req.query;
+        let {limit = 30, page = 1, fields, match, category_ids, price_range, ... otherFilters } = req.query;
+        const optionsFilters = otherFilters;
         limit=parseInt(limit);
         page=parseInt(page);
 
@@ -55,7 +56,7 @@ export const getAllProducts = async (req, res) => {
             queryOptions.offset = (page - 1) * limit;
           }
 
-        const products = await products.findAll(queryOptions);
+        const products = await Products.findAll(queryOptions);
         const total = await Products.count({where});
         if(!products){
             return res.status(404).json({error:'Produtos não encontrados.'});        
@@ -68,7 +69,8 @@ export const getAllProducts = async (req, res) => {
             page
         });
     }catch(error){
-        return res.status(500).json({error:'Erro ao buscar produtos.'});
+        console.error('Erro ao buscar produtos.',error);
+        return res.status(500).json({error:'Erro ao buscar produtos.',details:message.error});
     }
 }
 
