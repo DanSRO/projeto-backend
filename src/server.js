@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import { logger } from './middleware/logger.js';
 
 import dotenv from 'dotenv';
 dotenv.config();
@@ -14,6 +15,7 @@ import { productRoutes } from './routes/productRoutes.js';
 import { authRoutes } from './routes/authRoutes.js';
 
 const server = express();
+server.use(logger);
 server.use(cors());
 server.use(express.json());
 server.use('/v1/user', userRoutes);
