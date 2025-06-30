@@ -3,22 +3,29 @@
   "version": "1.0.0",
   "main": "dist/server.js",
   "type": "module",
+  "contributors": [
+    {
+      "name": "Daniel Dantas",
+      "email": "dan_dantas@hotmail.com"
+    },
+    {
+      "name": "Acaz Fernandes",
+      "email": "acazfernandess@hotmail.com"
+    }
+  ],
   "scripts": {
     "dev": "nodemon src/server.js",
     "start": "node dist/server.js",
     "test": "jest"
   },
   "keywords": [],
-  "author": "Daniel Dantas",
-  "contributors": [
-    "Acaz"
-  ],
   "license": "MIT",
   "description": "",
   "dependencies": {
     "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.14.1",

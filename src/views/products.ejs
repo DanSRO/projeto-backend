@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos</title>
+    <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
     <h1>Lista de produtos</h1>
     <ul>
-        <% products.forEach(produto=>{%>
-        <li>
-            <strong><%=produto.name%></strong><br>
-            <%=produto.description%> <br>
-            R$ <%=produto.price.toFixed(2)%>
-        </li>
-        <%})%>        
+        <% produtos.forEach( produto => { %>
+            <li>
+                <strong><%=produto.name%></strong><br>
+                <%= produto.description %><br>
+                R$ <%= produto.price.toFixed(2) %>
+            </li>
+        <% }) %>
     </ul>
     <a href="/">Voltar</a>
 </body>
