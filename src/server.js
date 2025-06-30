@@ -9,10 +9,6 @@ const port = 5000;
 
 import { Associations } from './models/Associations.js';
 import {sequelize} from './config/database.js';
-import userRoutes from './routes/userRoutes.js';
-import { categoryRoutes } from './routes/categoryRoutes.js';
-import { productRoutes } from './routes/productRoutes.js';
-import { authRoutes } from './routes/authRoutes.js';
 
 const server = express();
 server.use(logger);

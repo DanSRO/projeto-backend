@@ -1,0 +1,10 @@
+body {
+    font-family: sans-serif;
+    margin: 2rem;
+}
+
+a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: blue;
+}
